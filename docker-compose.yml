@@ -1,0 +1,15 @@
+services:
+
+  backend-node:
+    container_name: tailwindcss
+    image: node:24-alpine3.21
+    tty: true
+    volumes:
+      - ./:/tailwindcss
+    working_dir: /tailwindcss
+    networks:
+      - tailwind_network
+
+networks:
+  tailwind_network:
+    driver: bridge
